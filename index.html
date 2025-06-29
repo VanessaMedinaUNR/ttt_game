@@ -3,47 +3,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
-    <title>Accelerated Tik Tac Toe </title>
+    <title>Tik Tac Toe </title>
 </head>
 <body>
-    <table id = "ttt_board">
-        <tr>
-            <td id = "b1" >
-                <input class = "table_content" type="text">
-            </td>
-            <td id = "b2" >
-                <input class = "table_content" type="text">
-            </td>
-            <td id = "b3" >
-                <input class = "table_content" type="text">
-            </td>
-        </tr>
-        <tr>
-            <td id = "b4" >
-                <input class = "table_content" type="text">
-            </td>
-            <td id = "b5" >
-                <input class = "table_content" type="text">
-            </td>
-            <td id = "b6" >
-                <input class = "table_content" type="text">
-            </td>
-
-        </tr>
-        <tr>
-            <td id = "b7" >
-                <input class = "table_content" type="text">
-            </td>
-            <td id = "b8" >
-                <input class = "table_content" type="text">
-            </td>
-            <td id = "b9" >
-                <input class = "table_content" type="text">
-            </td>
-
-        </tr>
-    </table>
-    <button id = "startbtn">Start</button>
+    <h1>Tic Tac Toe</h1>
+    <div id="gameContainer">
+        <div id = "cellContainer">
+            <div cellIndex = "0" class="cell"></div>
+            <div cellIndex = "1" class="cell"></div>
+            <div cellIndex = "2" class="cell"></div>
+            <div cellIndex = "3" class="cell"></div>
+            <div cellIndex = "4" class="cell"></div>
+            <div cellIndex = "5" class="cell"></div>
+            <div cellIndex = "6" class="cell"></div>
+            <div cellIndex = "7" class="cell"></div>
+            <div cellIndex = "8" class="cell"></div>
+        </div>
+        <h2 id="statusTxt"></h2>
+        <button id = "restartBtn">Start</button>
+    <div>
     <script src="index.js"></script>
 </body>
 </html>

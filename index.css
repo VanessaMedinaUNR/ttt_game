@@ -1,22 +1,21 @@
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    text-align: left;
-    }
+.cell{
+    height: 75px;
+    width:  75px;
+    border: 2px solid;
+    box-shadow: 0 0 0 2px;
+    line-height: 75px;
+    font-size: 50px;
+    cursor: pointer;
+}
 
-    th, td {
-    border: 1px solid #ccc;
-    padding: 8px 12px;
-    }
+#gameContainer{
+    font-family: "Permanent Marker", cursive;
+    text-align: center;
+}
 
-    th {
-    background-color: #f2f2f2;
-    font-weight: bold;
-    }
-
-    tr:nth-child(even) {
-    background-color: #fafafa;
-    }
+#cellContainer{
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    width: 225px;
+    margin: auto;
+}
