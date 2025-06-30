@@ -1,16 +1,14 @@
 /**
  * Vanessa Medina
  * @file gameLogic.js
- * @description Handles UI and DOM interactions for Tic-Tac-Toe.
+ * @description Handles tic tac toe game logic
  */
-
 
 /**
  * Check for a win in the current board state.
  * @param {string[]} board - Array of 9 strings ("X", "O", or "")
  * @returns {{ winner: string|null, winningCombo: number[]|null }}
  */
-
 export function checkWinner(board) {
     const winConditions = [
         [0,1,2], [3,4,5], [6,7,8],
@@ -33,7 +31,6 @@ export function checkWinner(board) {
  * @param {string[]} board
  * @returns {boolean}
  */
-
 export function isDraw(board) {
     return board.every(cell => cell !== "");
 }
@@ -43,7 +40,6 @@ export function isDraw(board) {
  * @param {string} currentPlayer - "X" or "O"
  * @returns {string} - "O" if X, "X" if O
  */
-
 export function getNextPlayer(currentPlayer) {
     return currentPlayer === "X" ? "O" : "X";
 }
