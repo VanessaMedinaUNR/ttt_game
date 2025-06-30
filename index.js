@@ -24,14 +24,11 @@ let fileHandle = null;
  * Initializes the game and UI.
  */
 function initializeGame() {
-    cells.forEach(cell => cell.addEventListener("click", cellClicked));
-    restartBtn.addEventListener("click", restartGame);
-    loadBtn.addEventListener("click", openGameFile);
-    
-    running = false;  // game starts stopped
-    currentPlayer = "X";  // or null or blank, up to you
-    status.textContent = "Press Start to begin.";
-    restartBtn.textContent = "Start";
+  cells.forEach(cell => cell.addEventListener("click", cellClicked));
+  restartBtn.addEventListener("click", restartGame);
+  loadBtn.addEventListener("click", openGameFile);
+  status.textContent = `${currentPlayer}'s turn`;
+  running = true;
 }
 initializeGame();
 
@@ -64,7 +61,7 @@ function determineStartingPlayer() {
     alert("Player 1 starts (O)!");
   } else if (diffP2 < diffP1) {
     currentPlayer = "X";
-    alert("Player 2 starts (O)!");
+    alert("Player 2 starts (X)!");
   } else {
     currentPlayer = "O";
     alert("Tie! Player 1 starts (O)!");
@@ -174,7 +171,7 @@ function restartGame() {
     if (lastWinner) {
       currentPlayer = lastWinner;
     } else {
-      determineStartingPlayer();
+      determineStartingPlayer();  // <-- Called synchronously here!
     }
     running = true;
     status.textContent = `${currentPlayer}'s turn`;
