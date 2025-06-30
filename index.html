@@ -3,10 +3,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
-    <title>Tik Tac Toe </title>
+    <title>Tic Tac Toe </title>
 </head>
 <body>
     <h1>Tic Tac Toe</h1>
+    <p>To play between two browsers, load the same JSON file in both. Use 'New Game File' to create a file. Players guess dice roll to determine who starts. Player must reload game file to get updated game move</p>
     <div id="gameContainer">
         <div id = "cellContainer">
             <div cellIndex = "0" class="cell"></div>
@@ -21,7 +22,9 @@
         </div>
         <h2 id="statusTxt"></h2>
         <button id = "restartBtn">Start</button>
-    <div>
-    <script src="index.js"></script>
+        <button id="loadFileBtn">Load Game File</button>
+        <button id="newFileBtn">New Game File</button>
+    </div>
+    <script type="module" src="index.js"></script>
 </body>
 </html>
