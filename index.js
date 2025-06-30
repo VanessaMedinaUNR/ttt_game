@@ -161,33 +161,33 @@ function highlightWinningCells(combo) {
 /**
  * Resets or starts the game based on current state.
  */
-function restartGame() {
-    if (running) {
-      running = false;
-      options = Array(9).fill("");
-      cells.forEach(cell => {
-        cell.textContent = "";
-        cell.style.color = "black";
-      });
-      status.textContent = "Game stopped.";
-      restartBtn.textContent = "Start";
+async function restartGame() {
+  if (running) {
+    running = false;
+    options = Array(9).fill("");
+    cells.forEach(cell => {
+      cell.textContent = "";
+      cell.style.color = "black";
+    });
+    status.textContent = "Game stopped.";
+    restartBtn.textContent = "Start";
+  } else {
+    options = Array(9).fill("");
+    if (lastWinner) {
+      currentPlayer = lastWinner;
     } else {
-      options = Array(9).fill("");
-      if (lastWinner) {
-        currentPlayer = lastWinner;
-      } else {
-        determineStartingPlayer();  
-      }
-      running = true;
-      cells.forEach(cell => {
-        cell.textContent = "";
-        cell.style.color = "black";
-      });
-      status.textContent = `${currentPlayer}'s turn`;
-      restartBtn.textContent = "Clear";
+      await determineStartingPlayer(); // waits for user input modal
     }
-    saveGameState();
-}  
+    running = true;
+    cells.forEach(cell => {
+      cell.textContent = "";
+      cell.style.color = "black";
+    });
+    status.textContent = `${currentPlayer}'s turn`;
+    restartBtn.textContent = "Clear";
+  }
+  await saveGameState();
+} 
 
 /**
  * Prompts the user to create a new game state file.
